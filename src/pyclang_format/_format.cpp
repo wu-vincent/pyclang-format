@@ -1,6 +1,7 @@
 #include <clang/Format/Format.h>
 #include <format>
 #include <pybind11/pybind11.h>
+#include <pybind11/stl.h>
 
 namespace py = pybind11;
 
@@ -48,7 +49,7 @@ static std::string format(const std::string &code,
     return std::move(result.get());
 }
 
-PYBIND11_MODULE(example, m, py::mod_gil_not_used()) {
+PYBIND11_MODULE(_format, m, py::mod_gil_not_used()) {
     m.def("format",
           &format,
           py::arg("code"),
