@@ -1,0 +1,33 @@
+[build-system]
+requires = ["scikit-build-core", "pybind11"]
+build-backend = "scikit_build_core.build"
+
+[project]
+name = "pyclang-format"
+version = "0.1.0"
+description = "Add your description here"
+license = { file = "LICENSE" }
+readme = "README.md"
+classifiers = [
+    "Programming Language :: C",
+    "Programming Language :: C++",
+    "Operating System :: OS Independent",
+    "License :: OSI Approved :: Apache Software License",
+    "Intended Audience :: Developers",
+    "Topic :: Software Development :: Quality Assurance",
+]
+
+[project.urls]
+Clang = "http://clang.llvm.org/"
+Documentation = "https://clang.llvm.org/docs/ClangFormat.html"
+Download = "https://github.com/llvm/llvm-project/releases"
+Source = "https://github.com/wu-vincent/pyclang-format"
+
+[tool.scikit-build]
+install.components = ["python"]
+
+[tool.cibuildwheel]
+# Super-verbose output for debugging purpose
+build-verbosity = 3
+# Set CMAKE_GENERATOR env var which is respected by scikit-build-core to use Ninja on all platforms
+environment = "CMAKE_GENERATOR=Ninja"

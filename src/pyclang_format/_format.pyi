@@ -1,0 +1,3 @@
+def format(code: str, style: str = "file", fallback_style: str = "LLVM", assume_filename: str | None = None,
+           error_on_incomplete_format: bool = False) -> str:
+    ...
