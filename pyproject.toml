@@ -32,3 +32,5 @@ install.components = ["python"]
 build-verbosity = 3
 # Set CMAKE_GENERATOR env var which is respected by scikit-build-core to use Ninja on all platforms
 environment = "CMAKE_GENERATOR=Ninja"
+# Skip 32-bit builds
+skip = ["*-win32", "*-manylinux_i686"]
