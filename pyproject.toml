@@ -24,6 +24,7 @@ Download = "https://github.com/llvm/llvm-project/releases"
 Source = "https://github.com/wu-vincent/pyclang-format"
 
 [tool.scikit-build]
+build.targets = ["_format"]
 install.components = ["python"]
 
 [tool.cibuildwheel]

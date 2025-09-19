@@ -14,9 +14,17 @@ jobs:
 
     steps:
       - uses: actions/checkout@v5
+
+      - name: Set up msvc on Windows
+        if: runner.os == 'Windows'
+        uses: ilammy/msvc-dev-cmd@v1
+        with:
+          arch: ${{ matrix.arch }}
+
       - name: Build wheels
         uses: pypa/cibuildwheel@v3.1.4
+
       - uses: actions/upload-artifact@v4
         with:
-          name: cibw-wheels-${{ matrix.os }}
+          name: artifacts-wheels-${{ matrix.platform }}-${{ matrix.arch }}
           path: ./wheelhouse/*.whl
